@@ -10,8 +10,8 @@ class StaticData {
       levelNumber: 1,
       levelName: 'Level 1',
       puzzleModel: [
-        PuzzleModel(
-            wordsList: ['AT', 'AXE', 'EYE'],
-            wordsLocationList: [1, 2, 6, 7, 11, 12, 13])
+        PuzzleModel(word: 'BAT', wordsLocationList: [0,5,10]),
+        PuzzleModel(word: 'AXE', wordsLocationList: [5,6,7]),
+        PuzzleModel(word: 'EYE', wordsLocationList: [7,12,17]),
       ]);
 }

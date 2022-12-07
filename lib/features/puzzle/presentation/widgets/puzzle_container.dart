@@ -8,9 +8,12 @@ import 'package:flutter/material.dart';
 
 class PuzzleContainer extends StatelessWidget {
   const PuzzleContainer(
-      {Key? key, this.value, required this.isFilled, this.containerColor})
+      {Key? key,
+      required this.value,
+      required this.isFilled,
+      this.containerColor})
       : super(key: key);
-  final String? value;
+  final String value;
   final bool isFilled;
   final Color? containerColor;
 
@@ -23,11 +26,10 @@ class PuzzleContainer extends StatelessWidget {
           color: !isFilled
               ? Colors.grey.withOpacity(0.6)
               : containerColor ?? CustomColors.containerColorOrange),
-
       padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
       child: Center(
         child: Text(
-          value ?? '',
+          isFilled ? value : '',
           style: CustomTextStyle.containerTextStyle,
         ),
       ),

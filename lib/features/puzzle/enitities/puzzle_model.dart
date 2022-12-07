@@ -18,8 +18,8 @@ class PuzzleScreenModel {
 }
 
 class PuzzleModel {
-  final List<String> wordsList;
+  final String word;
   final List<int> wordsLocationList;
 
-  PuzzleModel({required this.wordsList, required this.wordsLocationList});
+  PuzzleModel({required this.word, required this.wordsLocationList});
 }

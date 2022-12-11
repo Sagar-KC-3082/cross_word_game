@@ -68,7 +68,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           _backgroundImageWidget(context),
           _puzzleSection(context),
           const SizedBox(height: 20),
-          _textFieldSection()
+          _textFieldSection(),
+          /*Positioned(
+              bottom: 20,
+              child: _getDraggableSection())*/
         ],
       ),
     );
@@ -160,6 +163,59 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           ),
         ),
       ));
+
+  Container _getDraggableSection() {
+    return Container(
+      height: 200,
+      width: 300,
+      color: Colors.red,
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Listener(
+                  onPointerMove: (opm){
+                    print('${opm.localPosition} ada ${opm.position}');
+                  },
+                  child: Container(
+                height: 50,
+                width: 50,
+                color: Colors.orangeAccent,
+              ),)
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                color: Colors.orangeAccent,
+              ),
+              Container(
+                height: 50,
+                width: 50,
+                color: Colors.orangeAccent,
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                color: Colors.orangeAccent,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class LetterPosition {
